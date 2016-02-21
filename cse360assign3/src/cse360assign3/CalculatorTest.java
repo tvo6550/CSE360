@@ -48,6 +48,7 @@ public class CalculatorTest
 	@Test
 	public void testCalculator()
 	{
+		//Initialize new Calculator
 		Calculator testCalc = new Calculator();
 		
 		//Check if initialized
@@ -55,58 +56,121 @@ public class CalculatorTest
 	}
 	
 	/**
-	 * getTotal - Not yet implemented
+	 * getTotal - Try to add something to the total and see if it returns.
 	 * 
-	 * @result - This will fail as it has not yet been implemented
+	 * @result - The method should return the integer that was added.
 	 */
 	@Test
 	public void testGetTotal()
 	{
-		fail("This method has not yet been implemented.");
+		//Initialize new calculator
+		Calculator testCalc = new Calculator();
+		
+		//Add
+		testCalc.add(3);
+		
+		//Check if total is integer added
+		assertEquals(3, testCalc.getTotal());
+				
 	}
 	
 	/**
-	 * add - Not yet implemented
+	 * add - Try to add something to the total
 	 * 
-	 * @result - This will fail as it has not yet been implemented
+	 * @result - The method should make it so the total is what was added
 	 */
 	@Test
 	public void testAdd()
 	{
-		fail("This method has not yet been implemented.");
+		//Initialize new calculator
+		Calculator testCalc = new Calculator();
+				
+		//Add
+		testCalc.add(3);
+				
+		//Check if total is integer added
+		assertEquals(3, testCalc.getTotal());
 	}
 	
 	/**
-	 * subtract - Not yet implemented
+	 * subtract - Try to subtract something from the total
 	 * 
-	 * @result - This will fail as it has not yet been implemented
+	 * @result - The method should make it so the total is less by the value inputted
 	 */
 	@Test
 	public void testSubtract()
 	{
-		fail("This method has not yet been implemented.");
+		//Initialize new calculator
+		Calculator testCalc = new Calculator();
+						
+		//Add
+		testCalc.subtract(3);
+						
+		//Check if total is integer added
+		assertEquals(-3, testCalc.getTotal());
 	}
 	
 	/**
-	 * multiply - Not yet implemented
+	 * multiply - Try to multiply the total after adding 1
 	 * 
-	 * @result - This will fail as it has not yet been implemented
+	 * @result - The total returned should be the total multiplied by the input
 	 */
 	@Test
 	public void testMultiply()
 	{
-		fail("This method has not yet been implemented.");
+		//Initialize new calculator
+		Calculator testCalc = new Calculator();
+								
+		//Add
+		testCalc.add(1);
+		
+		//Multiply
+		testCalc.multiply(3);
+								
+		//Check if total is integer added
+		assertEquals(3, testCalc.getTotal());
 	}
 	
 	/**
-	 * divide - Not yet implemented
+	 * divide - The method should divide the total by the number input after adding a number
 	 * 
-	 * @result - This will fail as it has not yet been implemented
+	 * @result - This should return the value of the total divided by the input
 	 */
 	@Test
 	public void testDivide()
 	{
-		fail("This method has not yet been implemented.");
+		//Initialize new calculator
+		Calculator testCalc = new Calculator();
+				
+		//Add
+		testCalc.add(15);
+		
+		//Multiply
+		testCalc.divide(5);
+										
+		//Check if total is integer added
+		assertEquals(3, testCalc.getTotal());
+	}
+	
+	/**
+	 * divideZero - The method should divide the total by 0 after adding a number
+	 * 
+	 * @result - This should return 0
+	 */
+	@Test
+	public void testDivideZero()
+	{
+		//Initialize new calculator
+		Calculator testCalc = new Calculator();
+				
+		//Add
+		testCalc.add(15);
+		
+		//Multiply
+		testCalc.divide(0);
+										
+		//Check if total is integer added
+		assertEquals(0, testCalc.getTotal());
 	}
 	
 	/**
