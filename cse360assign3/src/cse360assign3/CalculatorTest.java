@@ -95,7 +95,7 @@ public class CalculatorTest
 	/**
 	 * subtract - Try to subtract something from the total
 	 * 
-	 * @result - The method should make it so the total is less by the value inputted
+	 * @result - The method should make it so the total is less by the value input
 	 */
 	@Test
 	public void testSubtract()
@@ -106,7 +106,7 @@ public class CalculatorTest
 		//Add
 		testCalc.subtract(3);
 						
-		//Check if total is integer added
+		//Check if total is integer subtracted
 		assertEquals(-3, testCalc.getTotal());
 	}
 	
@@ -127,7 +127,7 @@ public class CalculatorTest
 		//Multiply
 		testCalc.multiply(3);
 								
-		//Check if total is integer added
+		//Check if total is integer multiplied
 		assertEquals(3, testCalc.getTotal());
 	}
 	
@@ -148,7 +148,7 @@ public class CalculatorTest
 		//Multiply
 		testCalc.divide(5);
 										
-		//Check if total is integer added
+		//Check if total is divided
 		assertEquals(3, testCalc.getTotal());
 	}
 	
@@ -169,18 +169,28 @@ public class CalculatorTest
 		//Multiply
 		testCalc.divide(0);
 										
-		//Check if total is integer added
+		//Check if total is 0
 		assertEquals(0, testCalc.getTotal());
 	}
 	
 	/**
-	 * getHistory - Not yet implemented
+	 * getHistory - The method will run the arithmetic function and produce the string of what it did
 	 * 
-	 * @result - This will fail as it has not yet been implemented
+	 * @result - The string of all the actions it performed in order
 	 */
 	@Test
 	public void testGetHistory()
 	{
-		fail("This method has not yet been implemented.");
+		//Initialize new calculator
+		Calculator testCalc = new Calculator();
+		
+		//Arithmetic
+		testCalc.add(4);
+		testCalc.subtract(2);
+		testCalc.multiply(2);
+		testCalc.add(5);
+		
+		//Check if the string is correct
+		assertEquals("0 + 4 - 2 * 2 + 5", testCalc.getHistory());
 	}
 }

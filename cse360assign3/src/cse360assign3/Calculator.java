@@ -13,6 +13,7 @@ package cse360assign3;
 public class Calculator 
 {
 	private int total;
+	private String history = "0";
 	
 	/**
 	 * Calculator - The default constructor for the class. Initializes total to zero
@@ -33,37 +34,46 @@ public class Calculator
 	}
 	
 	/**
-	 * add - This will add the value to the total
+	 * add - This will add the value to the total. Also it will add the action performed to the history
 	 * 
 	 * @param value - The integer that will be added to the total
 	 */
 	public void add(int value) 
 	{
 		total += value;
+		
+		history = history.concat(" + ");
+		history = history.concat(Integer.toString(value));
 	}
 	
 	/**
-	 * subtract - This will subtract the value from the total
+	 * subtract - This will subtract the value from the total. Also it will add the action performed to the history
 	 * 
 	 * @param value - The integer that will be subtracted from the total
 	 */
 	public void subtract(int value) 
 	{
 		total -= value;
+		
+		history = history.concat(" - ");
+		history = history.concat(Integer.toString(value));
 	}
 	
 	/**
-	 * multiply - This will multiply the value with the total
+	 * multiply - This will multiply the value with the total. Also it will add the action performed to the history
 	 * 
 	 * @param value - The integer that will be multiplied with the total
 	 */
 	public void multiply(int value) 
 	{
 		total *= value;
+		
+		history = history.concat(" * ");
+		history = history.concat(Integer.toString(value));
 	}
 	
 	/**
-	 * divide - This will divide the value into the total
+	 * divide - This will divide the value into the total. Also it will add the action performed to the history
 	 * 
 	 * @param value - The integer that will divided into the total
 	 */
@@ -73,6 +83,9 @@ public class Calculator
 			total /= value;
 		else
 			total = 0;
+		
+		history = history.concat(" / ");
+		history = history.concat(Integer.toString(value));
 	}
 	
 	/**
@@ -82,6 +95,6 @@ public class Calculator
 	 */
 	public String getHistory() 
 	{
-		return "";
+		return history;
 	}
 }
